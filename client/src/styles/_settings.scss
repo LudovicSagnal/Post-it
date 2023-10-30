@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "font-1";
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "font-2";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: "font-3";
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: "font-4";
+    src: url(../fonts/DotsAllForNow.ttf);
+}
+
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", sans-serif;
+$font-3: "font-3", sans-serif;
+
+$color-1 : rgb(181, 122, 180);
+$black: #04081d;
+$white: rgb(251, 246, 246);
+
+html {
+    scroll-behavior: smooth;
+}  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-1;
+    text-decoration: none;
+}
+body {
+    background: $white;
+    color: $black;
+    user-select: none;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+}
+h1 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+
+@mixin flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@mixin center-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d-none {
+    display: none;
+}

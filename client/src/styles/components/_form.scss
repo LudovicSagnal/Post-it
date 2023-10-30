@@ -1,0 +1,35 @@
+.add-form {
+    display: block;
+    position: fixed;
+    top: 50px;
+    right: 200px;
+    border-left: 1px solid $black;
+    height: 100%;
+    form {
+        @include center-child;
+        flex-direction: column;
+        border: 1px solid $black;
+        border-radius: 10px;
+        width: 500px;
+        gap: 5px;
+        margin-bottom: 10px;
+        margin-left: 25%;
+        background-color: $color-1;
+        .form-title, .form-author {
+            width: 60%;
+            height: 25px;
+            font-size: 16px;
+        }
+        .form-content {
+            resize: vertical;
+            box-sizing: border-box;
+            width: 90%;
+        }
+        .form-submit {
+            padding: 5px;
+            margin-bottom: 5px;
+            font-size: 16px;
+            background-color: rgb(169, 249, 146);
+        }
+    }
+}
