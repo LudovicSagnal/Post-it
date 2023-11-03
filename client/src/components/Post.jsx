@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { DateTime } from 'luxon';
 
 const Post = ({ post, setPostChange }) => {
 
@@ -12,7 +13,6 @@ const Post = ({ post, setPostChange }) => {
         setEditedTitle(post.title);
         setEditedContent(post.content);
         setEditMode(true);
-        console.log({post});
     };
 
     const cancelEdit = () => {
@@ -56,6 +56,13 @@ const Post = ({ post, setPostChange }) => {
         }
     };
 
+    function formatDateTime(dateString) {
+        const isoDate = DateTime.fromISO(dateString);
+        return isoDate.setLocale('fr').toLocaleString(DateTime.DATETIME_MED);
+      }  
+    const formattedCreatedAt = formatDateTime(post.createdAt);
+    const formattedUpdatedAt = formatDateTime(post.updatedAt);
+
     return (
         <div className='post-card'>
             {editMode ? (
@@ -70,6 +77,7 @@ const Post = ({ post, setPostChange }) => {
                     <h2 className='post-title'>{post.title}</h2>
                     <p className='post-content'>{post.content}</p>
                     <p className='post-author'>{post.author}</p>
+                    <p>{(post.updatedAt != post.createdAt) ? 'modifié le '+formattedUpdatedAt : ('posté le ')+formattedCreatedAt }</p>
                     <div className='post-buttons'>
                         <button onClick={editPost} className='post-edit'>Modifier</button>
                         <button onClick={confirmDelete} className='post-delete'>Supprimer</button>

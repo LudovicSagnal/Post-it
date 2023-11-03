@@ -1,0 +1,14 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    background-color: aqua;
+    .logo {
+        margin-left: 10%;
+    }
+    .btn-connect {
+        margin-right: 10%;
+        padding: 10px;
+    }
+}
