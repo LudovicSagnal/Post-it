@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const PostModel = require('../backend/models/post.model');
+// const UserModel = require('../backend/models/user.model');
 
 //cors 
 const cors = require('cors');
@@ -24,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', require('./routes/post.routes'));
+app.use('/', require('./routes/user.routes'));
 
 app.put('/posts/:id', async (req, res) => {
     const postId = req.params.id;

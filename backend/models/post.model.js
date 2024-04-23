@@ -14,9 +14,8 @@ const PostSchema = new mongoose.Schema(
             maxLenght:2000,
         },
         author: {
-            type: String,
-            required: true,
-            maxLenght:200,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
         },
     },
     {
